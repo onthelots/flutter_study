@@ -34,7 +34,10 @@
 <br>
 
 ### 2. Flutter bootcamp
-- 진행 중..
+#### 1-1. I_Am_Rich
+    - Flutter Widget Document 참고(https://github.com/youjeonghan/Flutter_Widget_Document)
+    - Material Design App, Scaffold 및 그 외 Widget을 활용한 기본 화면 생성 (main)
+    - flutter yaml을 통한 플랫폼(iOS, Android) 별 Assets - App icon 및 Launch Screen - 할당하기
 
 
 <br>
