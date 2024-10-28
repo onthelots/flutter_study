@@ -32,43 +32,54 @@ String introduce(String name, int age, String country) {
   return "hello $name, you are $age, come from $country";
 }
 
-// 위와 같이 작성할 경우, 파라미터값에 어떤 값이 들어가야 할지 헷갈릴 수 있음
-// 따라서, 어떤 파라미터 값이 들어가야 하는지 타이틀을 보여주기 위해 각각의 요소의 'name', 즉 placeholder를 작성해 줄 수 있음
+// var introduce = introduce(name, age, country)
+// 위와 같이 작성할 경우, 파라미터값에 어떤 값이 들어가야 할지 헷갈릴 수 있음!
+// (이름, 나이, 국적)으로 표시가 되긴 하지만, 결과적으로 아래와 같이 해당 함수가 작성되게 됨. 
+// 순서상으로 각각의 파라미터가 무엇을 의미하는지 알 수 없음
+// var introduce = introduce('kate', 24, 'korea');
+
+// 따라서, 어떤 파라미터 값이 들어가야 하는지 타이틀을 보여주기 위해 각각의 요소의 'name', 즉 [placeholder]를 작성해 줄 수 있음
 // 파라미터 Scope에 단순히 중괄호{ }로 감싸주면 됨!
 
-// String introduceWithNameParameters({String name, int age, String country}) {
-//   return "hello $name, you are $age, come from $country";
-// }
+String introduceYourSelf({String name, int age, String country}) {
+  return "hello $name, you are $age, come from $country";
+}
 
 // 그런데, 아래와 같이 파라미터 값을 작성하지 않는다면?
 // nullable이 아니므로, 오류 발생!
 // void main() {
-//   print(introduceWithNameParameters(
-//     name: 'hello' // but the implicit default value is 'null'. (오류 발생)
-//   ));
+  introduceYourSelf(
+    name: 'jack',
+    age: 23
+  );
+
+  // The parameter 'country' can't have a value of 'null' because of its type 'String', but the implicit default value is 'null'
+  // 파라미터인 country는 null값을 가질 수 없는데, 그 이유는 해당 파라미터의 타입이 String이기 때문.
+// }
 
 
 // 따라서, 2가지의 방법으로 이를 해결해야 함
 
 // ✅ Defaults Value Parameters (초기값이 있는 매개변수)
-// 즉, 각각의 parameters 값의 초기값을 설정
+// 즉, 각각의 parameters 값의 초기값을 직접 임의로 설정하는 방식
 
 String introduceWithDefaultsValue({String name = 'lime', int age = 23, String country = 'Wakanda'}) {
   return "hello $name, you are $age, come from $country";
 }
 
-// void main() {
-//   print(introduceWithDefaultsValue(
-//     name: 'lime',
-//     country: 'Korea',
-//     age: 23
-//   ));
-// }
+void main() {
+  print(introduceWithDefaultsValue(
+    name: 'lime',
+    country: 'Korea',
+    age: 23
+  ));
+}
 
-// 🖐🏻 그런데, 초기값을 설정하면 null safety 문제에 걸리진 않아도 -> 사용자가 반드시 파라미터값을 입력해야 하는 경우가 발생한다면?
+// 🖐🏻 그런데, 초기값을 설정하면 null safety 문제에 걸리진 않아도 
+// 사용자가 반드시 파라미터값을 입력해야 하는 케이스라면? (defaluts value가 아닌, 실제 값이 할당되어야 함)
 
 // ✅ Required Modified Parameters (반드시 작성해야 하는 파라미터 값)
-// 아래와 같이, 파라미터 데이터 타입 앞에 'requried' 키워드를 붙여, 필수 파라미터 값이 할당되어야 함
+// 아래와 같이, 파라미터 데이터 타입 앞에 ⭐️'requried' 키워드를 붙여, 필수 파라미터 값이 할당되어야 함
 String introduceWithRequiredKeyword({required String name, required int age, required String country}) {
   return "hello $name, you are $age, come from $country";
 }
@@ -79,7 +90,6 @@ String introduceWithRequiredKeyword({required String name, required int age, req
 
 
 // ✅ Optional Positonal Parameters 
-
 // 아래와 같은 방식은, 모두 작성되어야 함
 String sayHelloDefaults(String name, int age, String country) => "hello $name, you are $age, come from $country";
 
@@ -113,7 +123,8 @@ String capitalizeName(String name) => name.toUpperCase();
 
 // String capitalizeNameNull(String? name) => name.toUpperCase(); // 여기서, 발생되는 문제는 name이란 파라미터가 String인지 아닌지 알 수 없으므로 toUpperCase() 메서드에 대한 문제가 발생함
 
-// 따라서, 아래와 같이 조건문을 통해 변경시켜줄 수 있음. 물론 Operator를 통해 코드를 간결하게 작성해 줄 수도 있음
+// 따라서, 아래와 같이 조건문을 통해 변경시켜줄 수 있음. 
+// 물론 Operator를 통해 코드를 간결하게 작성해 줄 수도 있음
 
 String capitalizeNameNullCheck(String? name) {
   if (name != null) {
@@ -123,8 +134,8 @@ String capitalizeNameNullCheck(String? name) {
   return 'ANON';
 }
 
-// 축약형 (1)
-// 조건이 맞을때 ? / 그렇지 않을 경우엔 :
+// 축약형 (1) if(?) else (:)
+// '조건이 맞을때' ? / '그렇지 않을 경우' :
 String capitalizeNameNullCheckOperator(String? name) => name != null ? name.toUpperCase() : 'ANON';
 
 // 축약형 (2) QQ Operator
@@ -143,11 +154,12 @@ String capitalzeNameNullCheckQuestionOperator(String? name) => name?.toUpperCase
 
 
 // ✅ Typedef
-// 자료형 자체가 헷갈릴 경우 만들어줄 수 있는 방식
+// 자료형 자체가 복잡해 헷갈리거나, 자주 사용될 경우 '커스텀 타입'을 만들어 보자.
 List<int> reverseListOfNumbers(List<int> list) {
   var reversed = list.reversed;
 
   // toList()를 하는 이유는, 반환 타입인 List<int>가 다소 모호하기 때문에, 리터럴 타입으로서 만들어주기 위해 List(배열)를 재 선언함
+  // Iterable 은 읽기 전요이며, 특정 위치에 접근하거나 추가/삭제할 수 없음. 따라서 리스트로 재 변환해야 함
   return reversed.toList();
 }
 

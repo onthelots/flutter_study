@@ -9,7 +9,7 @@ import 'package:classes/classes.dart' as classes;
 
 class Player {
 
-  // 📌 function에서는 var 키워드를 사용해도 되나, Class에 선언되는 프로퍼티는 반드시 타입이 명시되어야 함
+  // 📌 function에서는 var 키워드를 사용해도 되나, Class에 선언되는 '프로퍼티'는 [반드시 타입이 명시]해야 함
   String name = 'lime';
   int xp = 200;
 }
@@ -54,7 +54,7 @@ class FootBallPlayer {
   late int height;
 
   // swift에서의 init 키워드와 동일하게, 아래와 같이 클래스 인스턴스 생성 시 할당하고자 하는 name, height의 파라미터를 생성한 후,
-  // self(swift)와 동일하게 클래스의 프로퍼티 값을 📌 [this] 키워드로 접근, name과 height를 인스턴스에서 작성되는 파라미터값으로 초기화함
+  // self(swift)와 동일하게 클래스의 프로퍼티 값을 📌 [this] 키워드로 접근, name과 height를 인스턴스에서 작성되는 파라미터값, 즉 [생성자]으로 활용됨
   // 또한, 클래스 프로퍼티에는 late 키워드를 함께 작성해줌 (나중에 인스턴스 생성 시 할당될 것이기 때문)
   FootBallPlayer(String name, int height) {
     this.name = name;
@@ -92,7 +92,7 @@ class FootballPlayerSummary {
 // }
 
 
-// ✅ Named Constructors Parameters
+// ✅ Named Constructors Parameters (이름이 있는 생성자)
 // 위 [positonal constructor]는 다소 위험할 수 있음. 
 // 인스턴스를 생성할 시, 초기화 되는 각각의 프로퍼티 값들이 많아질 수록, 무슨 값을 작성해야 하는지 알 수가 없음
 // 따라서, 기본 함수에서의 named Parameters와 같이, Class 또한 named를 실시할 수 있음
@@ -123,19 +123,20 @@ class MyPet {
 // }
 
 
-// ✅ Named Constructors
-// 2개의 별도의 인스턴스를 생성할수 있게끔 클래스 내부에서 나누어 초기화를 실시할 수 있음
+// ✅ Named Constructors (이름이 있는 생성자)
+// 2개의 별도의 인스턴스를 생성할수 있게끔 클래스 내부에서 '이름이 있는 생성자'로 만들 수 있음.
+// swift에서는 convenience init으로 사용됨
 
 class FootBallTeams {
   late final String name;
   late final String color;
   late final int title;
 
-  // 전역적 초기화
+  // 기본 생성자
   FootBallTeams({required this.name, required this.color, required this.title});
 
   // 📌 첫번째 constructor (Named Paramters)
-  // 클래스 내부에, createBluteTeam이라는 새로운 메서드를 생성함.
+  // 클래스 내부에, createBluteTeam이라는 새로운 생성자를 선언함
   // 콤마 (:) 뒤에 this 키워드를 통해 현재 클래스 프로퍼티의 값을 초기화 해줄 수 있음 -> Dart에게 여기서 FootBallTeams 클래스를 초기화하겠다는 것을 알림
   // 또한, 특정 프로퍼티의 값을 미리 설정할 수도 있음
   // 따라서, createBlueTeam이란 메서드를 통해 새로운 new 인스턴스를 생성할 수 있음.
@@ -308,6 +309,7 @@ class Human extends Animals {
 
   Human({required this.name, required this.age});
 
+  @override // 해당 override 키워드는 선택사항 이지만, 명시해 주는 것을 권장함 (헷갈리자네~)
   void walk() {
     print('human walking...');
   }
@@ -406,7 +408,7 @@ mixin class Famous {
 
 mixin class Awareness {
   void awareness() {
-    print('This Item is really famous and Good Quality');
+    print('is really famous');
   }
 }
 
@@ -418,7 +420,12 @@ class WooyoungMiTShirt with Famous, Awareness {
 
 void main() {
   var tshirt = WooyoungMiTShirt('3version');
-  tshirt.awareness(); // This Item is really famous and Good Quality
+
+  // WooyoungMiTShirt 클래스의 첫 번째 Mixins 클래스인 Famous로 접근 가능
+  tshirt.famous
+
+  // WooyoungMiTShirt 클래스의 두 번째 Mixins 클래스인 Awareness로 접근 가능
+  tshirt.awareness()
 }
 
 
