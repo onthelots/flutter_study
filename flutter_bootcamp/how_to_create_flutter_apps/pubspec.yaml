@@ -1,0 +1,25 @@
+name: how_to_create_flutter_apps
+description: "section 3 to 5"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  # yaml의 경우, 반드시 하위 내용을 작성할 때 첫번째 칸으로부터 2번 space가 필요함
+  # assets의 경우, 별도의 폴더를 생성한 후, 폴더 내 모든 파일을 작성해주는 것이 아닌 폴더 경로만 작성해주면, 알아서 참고하여 사용이 가능함.
+  assets:
+    - images/
