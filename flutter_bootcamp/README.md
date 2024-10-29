@@ -20,9 +20,11 @@ Assets | 별도의 Assets 폴더 생성 및 파일을 포함시킨 후, pubspec.
 
 ### Section 2. Mi Card
 - Hot Reload, Hot Restart (with. Stateless)
+- Layout widgets (Single-child layout, Multi-child layout)
 
 title  | content | note
 ----| ----- | -----
-Hot Reload | 특정 위젯의 코드 변경을 실시간으로 UI상에 나타냄 | Stateless, 즉 상태가 정적인 위젯만 적용
+Hot Reload | 특정 위젯의 코드 변경을 실시간으로 UI상에 나타냄. SatelessWidget을 상속받아야 하며, @override를 통해 Widget을 반환하는 build 함수를 구성해야 함 | Stateless, 즉 상태가 정적인 위젯만 적용
+
 
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fonthelots%2FScoop&count_bg=%230CC0DF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
