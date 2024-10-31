@@ -6,10 +6,10 @@
 ## Contents
 
 ### Boss 1. Magic 8 Ball
-- Stateless, Stateful Widget을 통한 UI 및 state 변화
-- Assets(image) 및 pubspec.yaml 커스텀
-- setState
-- Layout Widget 다루기
+| Overview                                                                                                                     | results                            |
+|------------------------------------------------------------------------------------------------------------------------------|------------------------------------|
+| - Stateless, Stateful Widget을 통한 UI 및 state 변화, 다양한 상태를 관리할 수 있는 구조로 설계 <br>- Assets(image) 및 pubspec.yaml 커스텀, 필요한 이미지와 리소스를 효과적으로 관리 <br>- setState를 활용하여 UI의 동적 변화를 구현하고, 사용자 상호작용에 반응 <br>- Layout Widget 다루기로 화면 구성 요소를 효율적으로 배치 | <img src="https://github.com/user-attachments/assets/854c8f8b-1001-4b11-8c7f-19a4fe998952" width="150" height="300"/> |
+
 
 <br>
 
