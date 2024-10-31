@@ -40,17 +40,20 @@
     - flutter yaml을 통한 플랫폼(iOS, Android) 별 Assets - App icon 및 Launch Screen - 할당하기
 
 #### 2. Mi Card
-    - Hot Reload & Hot Restart
-    - Stateless Widget
-    - Layout Widget (Single-child, Multi-child)
-    - 정렬방식 (CrossAxisAlignment, mainAxisAlignment)
+    - Hot Reload, Hot Restart (with. Stateless)
+    - Layout widgets
+    - Aligning Widgets
     - Padding, Margin
-    - 그 외 Widget Properties..
+    - Advance Properties
     
-#### 3. Dicee
+#### 3. Dicee 
     - Expanded Widget (with. flex)
     - Widget Option 설정하기 (with. Flutter Outline)
     - Stateful Widget을 통한 상태 변화 (setState)
+    
+#### 4. Xylophone 
+    - Assets과 Flutter packages 다루기
+    - Buildkey를 통한 Widget 재 사용 (with. method)
 
 <br>
 

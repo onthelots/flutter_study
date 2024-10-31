@@ -56,4 +56,20 @@ Stateful Widget | mutable, 프로퍼티 등 상태 변화에 따라 동적으로
 
 <br>
 
+### Section 4. Xylophone (speed up development)
+- Assets + Flutter packages
+    - pub.dev (flutter, dart packages)
+    - Assets (AudioCache/ AudioPlayer, AssetSource)
+- Buildkey (deprecated)
+    - Widget return method
+
+title  | content | note
+----| ----- | -----
+Flutter packages | 라이브러리를 종속할 수 있는 dev pub. pubspec.yaml > dependencies 내 라이브러리 이름과 버전을 기입함으로서 종속 | 사용하고자 하는 .dart file 상단에 해당 라이브러리를 import
+Assets | 로컬에 존재하는 AudioSource, 즉 오디오 Assets을 사용할 시 해당 인스턴스 생성후 활용 | 경로인 'assets/'는 defaults이므로, 만약 폴더명이 assets이라면 path에 해당 파일명만 작성 
+Buildkey | 유사한 Widget이 반복되는 레이아웃일 경우, 해당 Widget 타입을 반환하는 메서드를 생성하는 방식  | -
+
+<br>
+
+
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fonthelots%2FScoop&count_bg=%230CC0DF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
