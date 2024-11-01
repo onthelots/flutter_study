@@ -6,7 +6,7 @@
 
 ## Contents
 
-### Section 1. I Am Rich 
+`Section 1. I Am Rich`
 - 기본 앱 형태 구현
 - Hot Reload
 - 앱 아이콘 사용 (iOS, Android)
@@ -18,7 +18,7 @@ Assets | 별도의 Assets 폴더 생성 및 파일을 포함시킨 후, pubspec.
 
 <br>
 
-### Section 2. Mi Card
+`Section 2. Mi Card`
 - Hot Reload, Hot Restart (with. Stateless)
 - Layout widgets
     - Single-child layout (Container)
@@ -40,7 +40,7 @@ CrossAxisAlignment | Column 혹은 Row의 주축 반대 방향 | center, start, 
 
 <br>
 
-### Section 3. Dicee (Stateful Widget)
+`Section 3. Dicee (Stateful Widget)`
 - Widgets
     - Expanded Widget
     - Flutter Outline
@@ -56,7 +56,7 @@ Stateful Widget | mutable, 프로퍼티 등 상태 변화에 따라 동적으로
 
 <br>
 
-### Section 4. Xylophone (speed up development)
+`Section 4. Xylophone (speed up development)`
 - Assets + Flutter packages
     - pub.dev (flutter, dart packages)
     - Assets (AudioCache/ AudioPlayer, AssetSource)
@@ -71,5 +71,16 @@ Buildkey | 유사한 Widget이 반복되는 레이아웃일 경우, 해당 Widge
 
 <br>
 
+`Section 5. quizzler`
+- Custom Widget Class
+- List Widget
+
+title  | content | note
+----| ----- | -----
+VoidCallback | button action 등 callBack에 관련 타입 | -
+_ class name | _는 일종의 private class이며, 이는 타 클래스나 파일에서 접근할 수 없도록 함 | -
+List\<Widget> | multi-layout의 children 타입이며, 초기값을 할당할 경우 반드시 타입을 명기하거나 cast 필요 | -
+
+<br>
 
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fonthelots%2FScoop&count_bg=%230CC0DF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
