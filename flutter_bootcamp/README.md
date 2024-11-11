@@ -71,14 +71,16 @@ Buildkey | 유사한 Widget이 반복되는 레이아웃일 경우, 해당 Widge
 
 <br>
 
-`Section 5. quizzler`
+`Section 5. modularising_organising_with_oop`
 - Custom Widget Class
 - List Widget
+- Class
+- Object-Oriented Programming (with refactoring)
 
 title  | content | note
 ----| ----- | -----
 VoidCallback | button action 등 callBack에 관련 타입 | -
-_ class name | _는 일종의 private class이며, 이는 타 클래스나 파일에서 접근할 수 없도록 함 | -
+_ class name | _는 일종의 private class이며, 이는 타 클래스나 파일에서 접근할 수 없도록 함 | 이는, OOP의 은닉화와 연관
 List\<Widget> | multi-layout의 children 타입이며, 초기값을 할당할 경우 반드시 타입을 명기하거나 cast 필요 | -
 
 <br>
