@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'Button+CustomCheckerButton.dart';
 import 'quiz_brain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+
 
 QuizBrain quizBrain = QuizBrain();
 
@@ -112,11 +114,25 @@ class _QuizPageState extends State<QuizPage> {
               this.checkAnswer(userPickedAnswer: false);
             }),
 
+        // ✅ Widgets
+        // Padding >
+          // child : Row
+            // children : scoreKeeper (Dart에서의 List는 Iterable을 반환하기 때문에 -> 리스트트 형태로 바꾸기 위해 .toList()를 호출해야 함)
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Row(
             children: scoreKeeper.map((icon) {
+              // return
+              // scoreKeeper는 List<Icon> 타입인데, 이를 map을 활용하게 되면 List<Widget> 형태로 '반환'이 가능함.
+              // 즉, 내부적으로 변환할 때, List<Icon> -> List<Flexible> 타입으로 변환한 후, .toList()를 통해 재 변환함
+
+              // ✅ Flexible : 주어진 영역에서 '자식 위젯' 필요한 만큼 공간을 차짛하도록 함.
+              // Row, Column과 같은 부모 위젯 내에서 사용되며, 자식 위젯의 크기를 조정 / 레이아웃을 유연하게 함
               return Flexible(
+
+                // ✅ FittedBox : 자식 위젯의 크기를, 부모 위젯에 맞추는 위젯 타입
+                // BoxFit 열거형을 통해, 맞추는 방식을 설정할 수 있음.
+                // scaleDown : 자식 위젯의 크기를, 부모 위젯의 최대 크기로 맞춤. 예를 들어 자식 위젯이 점점 커져도, 부모 위젯에 맞춰져야 하기 때문에 자동으로 Scale을 작게 만듬
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: icon,
