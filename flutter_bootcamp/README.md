@@ -7,9 +7,14 @@
 ## Contents
 
 `Section 1. I Am Rich`
-- 기본 앱 형태 구현
-- Hot Reload
-- 앱 아이콘 사용 (iOS, Android)
+
+    1) what is Widgets?
+
+    2) Hot Reload & Hot Restart
+    
+    3) Assets (iOS, Android)
+        - pubspec.yaml
+        - add asset, app icon
 
 title  | content | note
 ----| ----- | -----
@@ -19,14 +24,18 @@ Assets | 별도의 Assets 폴더 생성 및 파일을 포함시킨 후, pubspec.
 <br>
 
 `Section 2. Mi Card`
-- Hot Reload, Hot Restart (with. Stateless)
-- Layout widgets
-    - Single-child layout (Container)
-    - Multi-child layout (Column and Rows)
-- Aligning Widgets
-    - CrossAxisAlignment / mainAxisAlignment 
-    - Padding, Margin
-- Properties (Card, Sizedbox, Padding, ListTile, Divider, etc..)
+
+    1) Hot Reload, Hot Restart (with. Stateless)
+
+    2) Layout widgets
+        - Single-child layout (Container)
+        - Multi-child layout (Column and Rows)
+
+    3) Aligning Widgets
+        - CrossAxisAlignment / mainAxisAlignment 
+        - Padding, Margin
+
+    4) Properties (Card, Sizedbox, Padding, ListTile, Divider, etc..)
 
 title  | content | note
 ----| ----- | -----
@@ -41,12 +50,14 @@ CrossAxisAlignment | Column 혹은 Row의 주축 반대 방향 | center, start, 
 <br>
 
 `Section 3. Dicee (Stateful Widget)`
-- Widgets
-    - Expanded Widget
-    - Flutter Outline
-- Stateful
-    - setState()
-    - button (Textbutton, etc..)
+
+    1) Widgets
+        - Expanded Widget
+        - Flutter Outline
+
+    2) Stateful
+        - setState()
+        - button (Textbutton, etc..)
 
 title  | content | note
 ----| ----- | -----
@@ -57,11 +68,13 @@ Stateful Widget | mutable, 프로퍼티 등 상태 변화에 따라 동적으로
 <br>
 
 `Section 4. Xylophone (speed up development)`
-- Assets + Flutter packages
-    - pub.dev (flutter, dart packages)
-    - Assets (AudioCache/ AudioPlayer, AssetSource)
-- Buildkey (deprecated)
-    - Widget return method
+
+    1) Assets + Flutter packages
+        - pub.dev (flutter, dart packages)
+        - Assets (AudioCache/ AudioPlayer, AssetSource)
+
+    2) Buildkey (deprecated)
+        - Widget return method
 
 title  | content | note
 ----| ----- | -----
@@ -72,10 +85,15 @@ Buildkey | 유사한 Widget이 반복되는 레이아웃일 경우, 해당 Widge
 <br>
 
 `Section 5. modularising_organising_with_oop`
-- Custom Widget Class
-- List Widget
-- Class
-- Object-Oriented Programming (with refactoring)
+
+    1) Custom Widget Class
+
+    2) List Widget
+
+    3) Class
+
+    4) Object-Oriented Programming (with refactoring)
+        - abstraction / encapsulation / inheritance / polymorphism
 
 title  | content | note
 ----| ----- | -----
@@ -84,5 +102,27 @@ _ class name | _는 일종의 private class이며, 이는 타 클래스나 파�
 List\<Widget> | multi-layout의 children 타입이며, 초기값을 할당할 경우 반드시 타입을 명기하거나 cast 필요 | -
 
 <br>
+
+`Section 6. Flutter intermediate`
+
+    1) ThemeData (cf. CopyWith)
+
+    2) Refactor Widgets
+        - extract widget
+
+    3) Final vs Const
+
+title  | content | note
+----| ----- | -----
+ThemeData | 특정 Widget의 Theme을 설정. 이는 앱 내 공통적으로 활용되는 모듈을 생성하는데 용이함 | dark, light 모드에 따른 분리적용 필요
+CopyWith | 특정 모듈, 객체의 속성을 전부 변경시키지 않고, 옵셔널을 통한 특정한 속성을 변경시킬 수 있는 방식 혹은 메서드. 모듈 내 일종의 '변경 가능한 optional Constructor'로 이해할 것 | 폴더 내 프로젝트 참고 (ThemeData와 연관)
+extract widget | 지속적으로 사용되는 위젯 모듈을 쉽고 간편하게 하나의 모듈로 명명하는 방식. flutter outline에서, 명명하고자 하는 위젯을 right click > 'Extract Widget' 선택 > 명칭을 설정하면 Stateless Widget 생성 | - 
+Const | 불변, immutable. 즉, 상태값이 변경되지 않으며, 컴파일 단계에서 값 자체가 고정되어야 함 | 예시) private key
+Final | Const와 유사한 불변성을 가지고 있으나, 이는 런타임 단계(앱 구동)에서 결정된다는 특징이 있음  | 예시) Date(현재시간), final 성격의 stl widget 등
+Extension | 클래스, 열거형 등의 기능을 확장하는 역할. <extension> 키워드 뒤에 해당 <확장명>을 별도로 작성할 수 있고, <확장명> 뒤 <on>, 그리고 확장하고자 하는 <객체 이름>을 작성함으로서 내부에 추가적인 기능을 부여 | 예시) extension colorsets on Color
+ThemeData | 특정 Widget의 Theme을 설정. 이는 앱 내 공통적으로 활용되는 모듈을 생성하는데 용이함 | dark, light 모드에 따른 분리적용 필요
+
+<br>
+
 
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fonthelots%2FScoop&count_bg=%230CC0DF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
