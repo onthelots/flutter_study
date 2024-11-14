@@ -105,6 +105,7 @@ List\<Widget> | multi-layout의 children 타입이며, 초기값을 할당할 �
 
 `Section 6. Flutter intermediate`
 
+#### 6-1. basic  
     1) ThemeData (cf. CopyWith)
 
     2) Refactor Widgets
@@ -121,6 +122,33 @@ Const | 불변, immutable. 즉, 상태값이 변경되지 않으며, 컴파일 �
 Final | Const와 유사한 불변성을 가지고 있으나, 이는 런타임 단계(앱 구동)에서 결정된다는 특징이 있음  | 예시) Date(현재시간), final 성격의 stl widget 등
 Extension | 클래스, 열거형 등의 기능을 확장하는 역할. <extension> 키워드 뒤에 해당 <확장명>을 별도로 작성할 수 있고, <확장명> 뒤 <on>, 그리고 확장하고자 하는 <객체 이름>을 작성함으로서 내부에 추가적인 기능을 부여 | 예시) extension colorsets on Color
 ThemeData | 특정 Widget의 Theme을 설정. 이는 앱 내 공통적으로 활용되는 모듈을 생성하는데 용이함 | dark, light 모드에 따른 분리적용 필요
+
+<br>
+
+#### 6-2. Advanced
+    1) gestureDetector
+
+    2) Enum
+        - enum with extension & method (초기값, RawValue 설정)
+
+    2) first_order_objects (리팩토링)
+        - return Widget function
+        - reusableCard Class 생성, buildGenderCard method 생성
+
+    4) slider_widget
+        - SliderTheme (custom widget)
+
+    5) navigation
+        - routes 방식
+        - push(pushNamed), pop
+
+title  | content | note
+----| ----- | -----
+gestureDetector | 유저 상호작용을 다루는 방식. 모든 제스처를 감지하며, 다양한 유형의 액션 클래스가 정의되어 있음 | -
+Enum | 속성들의 묶음. Dart에서는 기본값(Rawvalue)은 직접 할당할 수 없으나, Extension을 통해 직접 정의(on)하거나 혹은 내부 메서드를 통해 수정자로 접근 가능 | -
+1급 객체 | 변수 할당, 인자 활용, 반환값 활용 / 3가지의 방식을 통해 Widget을 보다 간단하게 활용할 수 있음 | 폴더 내 프로젝트 참고
+navigation | 변수 할당, 인자 활용, 반환값 활용 / 3가지의 방식을 통해 Widget을 보다 간단하게 활용할 수 있음 | -
+routes | pushNamed를 통해 명명하여 push 혹은 pop을 실시할 수 있음 | 이름 앞에 반드시 / 키워드가 필요
 
 <br>
 
