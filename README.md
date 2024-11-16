@@ -9,22 +9,26 @@
 
 ## Contents
 
-### Dart beginning
-#### 1. variables
+### 1. Dart beginning
+
+#### 1-1. variables
+
     - 변수, 상황에 따른 활용방식 (dynamic, final, late, const)
     - Null Safety
 
-#### 2. data type
+#### 1-2. data type
+
     - dart 언어에서 사용되는 일반 데이터 타입
     - 문자열 보간
     - List 및 Collection 방식 (if, for)
     - Map, Sets
 
-#### 3. functions
+#### 1-3. functions
+
     - 함수 선언방식
     - 파라미터 활용방식 (Named, Defaults Value, Required Modified, Optioanl Positonal)
 
-#### 4. classes
+#### 1-4. classes
     - Class 선언 및 초기화 방식
     - Constructors (+ 메서드)
     - Enumeration
@@ -33,27 +37,43 @@
 
 <br>
 
-### Flutter bootcamp
-#### 1. I_Am_Rich
+### 2. Flutter bootcamp
+
+#### 2-1. I_Am_Rich
     - Flutter Widgets Document 참고(https://docs.flutter.dev/ui/widgets)
     - Material Design App, Scaffold 및 그 외 Widget을 활용한 기본 화면 생성 (main)
     - flutter yaml을 통한 플랫폼(iOS, Android) 별 Assets - App icon 및 Launch Screen - 할당하기
 
-#### 2. Mi Card
+#### 2-2. Mi Card
     - Hot Reload, Hot Restart (with. Stateless)
     - Layout widgets
     - Aligning Widgets
     - Padding, Margin
     - Advance Properties
     
-#### 3. Dicee 
+#### 2-3. Dicee (Stateful Widget)
     - Expanded Widget (with. flex)
     - Widget Option 설정하기 (with. Flutter Outline)
     - Stateful Widget을 통한 상태 변화 (setState)
     
-#### 4. Xylophone 
+#### 2-4. Xylophone 
     - Assets과 Flutter packages 다루기
     - Buildkey를 통한 Widget 재 사용 (with. method)
+
+#### 2-5. modularising_organising_with_oo
+    - Custom Widget Class 생성하기
+    - 객체지향형 프로그래밍(OOP) 적용
+
+#### 2-6. Flutter intermediate
+    - 테마 설정 ThemeData (cf. CopyWith)
+    - Extract widget을 통한 코드분리 및 위젯 객체관리
+    - Fianl vs Const
+    - 1급 객체
+    - GestureDetector Widget
+    - Slider Widget 
+    - navigation (route)
+    - send data
+
 
 <br>
 
