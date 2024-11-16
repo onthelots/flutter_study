@@ -141,6 +141,7 @@ ThemeData | 특정 Widget의 Theme을 설정. 이는 앱 내 공통적으로 활
     5) navigation
         - routes 방식
         - push(pushNamed), pop
+        - send_data
 
 title  | content | note
 ----| ----- | -----
