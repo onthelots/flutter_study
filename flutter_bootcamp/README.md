@@ -153,5 +153,27 @@ routes | pushNamed를 통해 명명하여 push 혹은 pop을 실시할 수 있�
 
 <br>
 
+`Section 7. Live_Daata_with_Asynchronous`
+
+    1) User permission with both platform (iOS, Android)
+
+    2) dart의 동기와 비동기
+
+    3) Flutter lifeCycle
+
+    4) weather API를 통한 JSON 데이터 파싱
+
+    5) Navigator를 통한 data 전달(+ backwards)
+
+title  | content | note
+----| ----- | -----
+life cycle | Widget 생성 시, 초기화 - 빌드 - 비 활성화(파괴) 순서로 life cycle이 구성됨 | initState -> build -> deactivate
+async-await | 비동기-> 동기화 처리를 위한 방식. async 키워드를 통해 해당 메서드는 '비동기'임을 알리고, 내부에서 await 키워드를 통해 데이터가 반환될때까지 순서를 설정함 | -
+Future | 비동기 반환 타입(결과물). 소위 '영수증' 역할을 담당. 지금은 존재하지 않으나, '미래'에 요청한 데이터나 에러가 담기게 됨 | try-catch 구문 참고 (dart_language 폴더 내)
+API Decode | JSON 데이터 파싱을 위해, http.get 메서드를 활용하며, 이는 Uri 형식을 반환 / parse(url) | 주로 http 라이브러리를 활용
+push, pop | Stack 구조. Navigator.push는 dynamic 반환값을 가지며, 해당 반환값은 스택으로 인해 쌓인 화면에서 pop시 전달할 수 있음 | 7.8 프로젝트 파일 참고
+
+<br>
+
 
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fonthelots%2FScoop&count_bg=%230CC0DF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
