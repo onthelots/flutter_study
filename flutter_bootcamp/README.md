@@ -175,5 +175,18 @@ push, pop | Stack 구조. Navigator.push는 dynamic 반환값을 가지며, 해�
 
 <br>
 
+`Section 8. Flash_chat_with_firebase `
+
+    1) Static keyword
+    2) Hero Widget
+    3) Custom Animation
+
+
+title  | content | note
+----| ----- | -----
+Static | building 내부에 귀속, 한 번만 별도의 메모리 공간에 할당되는 정적 타입. 필요에 의해 사용할 시, 리소스 낭비를 줄일 수 있음  | Singleton pattern 참고
+Hero Widget | 특정 이벤트, 혹은 A->B 스크린으로 이동 시 간단하게 활용할 수 있는 애니메이션 Widget | Hero Widget, Tag 프로퍼티를 통해 A, B 모두 공유되는 위젯에 할당하고, 스크린 이동을 실시함
+Flutter Animation | Ticker(트리거)를 Mixin한 이후, controller 생성을 통해 관리함으로서 커스텀 애니메이션을 구현하는 방식 | controller의 경우, 메모리 누수 문제가 있으므로 반드시 dispose()할 것
+
 
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fonthelots%2FScoop&count_bg=%230CC0DF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
