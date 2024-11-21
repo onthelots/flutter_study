@@ -81,6 +81,11 @@
     - API Parsing
     - Navigator의 정의 및 활용 (push, pop)
 
+#### 8. Flash_chat_with_firebase
+    - Static keyword
+    - Flutter Animation 활용
+    - Firebase 연동 (Auth, FireStore)
+    - Streams & StreamBuilder
 
 <br>
 

@@ -178,15 +178,33 @@ push, pop | Stack 구조. Navigator.push는 dynamic 반환값을 가지며, 해�
 `Section 8. Flash_chat_with_firebase `
 
     1) Static keyword
-    2) Hero Widget
-    3) Custom Animation
 
+    2) Hero Widget
+
+    3) Custom Animation
+        - animationController
+        - AnimatedTextKit
+        - ColorTween
+
+    4) Firebase with Flutter
+        - Firebase setup
+        - Import Firebase Framwork (auth, firestore)
+        - Firebase Auth (UserCredential 생성)
+        - fireStore (snapshots-get / add)
+        - query 방식
+
+    5) Flutter Streams & StreamBuilder
+        - The difference from 'Future'
 
 title  | content | note
 ----| ----- | -----
 Static | building 내부에 귀속, 한 번만 별도의 메모리 공간에 할당되는 정적 타입. 필요에 의해 사용할 시, 리소스 낭비를 줄일 수 있음  | Singleton pattern 참고
 Hero Widget | 특정 이벤트, 혹은 A->B 스크린으로 이동 시 간단하게 활용할 수 있는 애니메이션 Widget | Hero Widget, Tag 프로퍼티를 통해 A, B 모두 공유되는 위젯에 할당하고, 스크린 이동을 실시함
-Flutter Animation | Ticker(트리거)를 Mixin한 이후, controller 생성을 통해 관리함으로서 커스텀 애니메이션을 구현하는 방식 | controller의 경우, 메모리 누수 문제가 있으므로 반드시 dispose()할 것
+Flutter Animation | Ticker(트리거)를 Mixin한 이후, controller 생성을 통해 관리함으로서 커스텀 애니메이션을 구현하는 방식 | controller의 경우, 메모리 누수 문제를 해소하기 위해 반드시 dispose()할 것
+Firebase setup | 3.0버전 이상부터는 CLI를 통해 한번에 2개의 플랫폼을 등록할 수 있으며, 각각의 app name을 추가로 설정해야 세팅이 마무리 됨 | Firebase 공식 메뉴얼 참고
+Stream | 일회성이 아닌 비동기적 데이터 사용하는 방식. Future와는 달리 데이터의 변화를 계속 감지하고, 처리하는데 용이함 | StreamBuilder와 함께 활용
+StreamBuilder | Stream 데이터를 실제 UI 상에 나타내기 위한 Widget. [stream 설정]과 [builder(context, snapshot)] 설정을 통해 구현 가능 | snapshot은 flutter의 AsyncSnapshot으로, 실제 사용하고자 하는(예를 들어 Firestore의 snapshot)타입에 맞춰서 StreamBuilder<'snapshot type'>을 명시함으로 일치시켜야 함
 
+<br>
 
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fonthelots%2FScoop&count_bg=%230CC0DF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
