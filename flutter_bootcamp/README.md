@@ -207,4 +207,37 @@ StreamBuilder | Stream 데이터를 실제 UI 상에 나타내기 위한 Widget.
 
 <br>
 
+`Section 9. Todoey(to_do_list)`
+    
+    1) showModalBottomSheet
+        - SingleChildScrollView 
+    
+    2) ListView & ListTile
+        - ListView.builder (itemBuilder, itemCount) - ListTile을 활용한 반복적인 List item 관리
+
+    3) Lifting state up
+        - callBack을 통한 상태관리
+
+    4) Provider pattern
+        - ChangeNotifier (Model)
+        - ChangeNotifierProvider (builder Widget)
+        - listen (provider)
+        - Consumer (구독)
+
+    5) UnmodifiableListView
+
+
+title  | content | note
+----| ----- | -----
+showModalBottomSheet | 흔히 사용하는 모달뷰. 정적이 아닌 동적 모달이며, context와 builder를 통해 내부 위젯을 관리 | -
+SingleChildScrollView | 자식 위젯을 Scrollable하도록 만드는 위젯이며, 내부 콘텐츠가 화면의 높이를 초과할 경우 세로 스크롤 기능을 제공함 | MediaQuery를 통해 키보드 등 외부 동작에 의해 화면이 가려지는 영역을 감지하여 관리
+ListTile | ListView의 item (reusable) | title, leading, trailing 등 설정된 값에 따라 자동으로 item 영역을 채움
+ListView.builder | context와 index을 통해 할당되는 item, 즉 ListTile의 속성을 설정할 수 있음 | itemBuilder와 itemCount 설정
+Lifting state up | 'Delegate pattern'과 유사. 상위 위젯에서 하위 위젯의 역할을 위임하며, 이를 콜백함수를 통해 전달함으로서 상태관리를 실시 | -
+Provider pattern | 상태 객체를 위젯트리의 상위에서 하위 위젯으로 전달함으로서 상태가 변경될 시, UI를 자동으로 갱신하는 도구 | ChangeNotifier, listen 등의 관리방식이 존재하며, 유연하고 효율적으로 상태관리 가능 
+Consumer | 상태변화를 구독하고, 업데이트 하는 위젯이며, '리스닝'을 통해 상태가 변경될 시 UI를 갱신하는 역할을 담당 | 상태가 변경될 시, 해당 부분만 업데이트 되므로 매우 효율적임
+UnmodifiableListView | List를 읽기 전용으로 감싸서, 해당 요소를 변경, 추가, 삭제할 수 없으며, 데이터의 불변성을 보장 | dart:collection 라이브러리 내 제공되는 클래스
+
+<br>
+
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fonthelots%2FScoop&count_bg=%230CC0DF&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
