@@ -1,12 +1,12 @@
 # flutter_bootcamp
 - Flutter 부트캠프 (cf. The Complete Flutter Development Bootcamp with Dart)
-- Android Studio 기반 주요개념 및 프로젝트 학습 
+- Android Studio 기반 Flutter 주요개념(Widget, 상태관리, 아키텍쳐 등) 및 프로젝트 실습
 
 <br>
 
 ## Contents
 
-`Section 1. I Am Rich`
+### 2-1 How to create flutter apps
 
     1) what is Widgets?
 
@@ -23,7 +23,8 @@ Assets | 별도의 Assets 폴더 생성 및 파일을 포함시킨 후, pubspec.
 
 <br>
 
-`Section 2. Mi Card`
+
+### 2-2 Flutter widgets
 
     1) Hot Reload, Hot Restart (with. Stateless)
 
@@ -49,7 +50,7 @@ CrossAxisAlignment | Column 혹은 Row의 주축 반대 방향 | center, start, 
 
 <br>
 
-`Section 3. Dicee (Stateful Widget)`
+### 2-3 App state
 
     1) Widgets
         - Expanded Widget
@@ -67,7 +68,7 @@ Stateful Widget | mutable, 프로퍼티 등 상태 변화에 따라 동적으로
 
 <br>
 
-`Section 4. Xylophone (speed up development)`
+### 2-4 Speed up development
 
     1) Assets + Flutter packages
         - pub.dev (flutter, dart packages)
@@ -84,7 +85,7 @@ Buildkey | 유사한 Widget이 반복되는 레이아웃일 경우, 해당 Widge
 
 <br>
 
-`Section 5. modularising_organising_with_oop`
+### 2-5 Modularising organising with oop
 
     1) Custom Widget Class
 
@@ -103,9 +104,10 @@ List\<Widget> | multi-layout의 children 타입이며, 초기값을 할당할 �
 
 <br>
 
-`Section 6. Flutter intermediate`
+### 2-6 Intermediate course
 
-#### 6-1. basic  
+#### 👉🏻 Basic course
+
     1) ThemeData (cf. CopyWith)
 
     2) Refactor Widgets
@@ -125,7 +127,7 @@ ThemeData | 특정 Widget의 Theme을 설정. 이는 앱 내 공통적으로 활
 
 <br>
 
-#### 6-2. Advanced
+#### 👉🏻 Advance course
     1) gestureDetector
 
     2) Enum
@@ -153,7 +155,7 @@ routes | pushNamed를 통해 명명하여 push 혹은 pop을 실시할 수 있�
 
 <br>
 
-`Section 7. Live_Daata_with_Asynchronous`
+### 2-7 Live_Data_with_Asynchronous
 
     1) User permission with both platform (iOS, Android)
 
@@ -175,7 +177,7 @@ push, pop | Stack 구조. Navigator.push는 dynamic 반환값을 가지며, 해�
 
 <br>
 
-`Section 8. Flash_chat_with_firebase `
+### 2-8 Flash_chat_with_firebase
 
     1) Static keyword
 
@@ -207,7 +209,7 @@ StreamBuilder | Stream 데이터를 실제 UI 상에 나타내기 위한 Widget.
 
 <br>
 
-`Section 9. Todoey(to_do_list)`
+### 2-9 Provider
     
     1) showModalBottomSheet
         - SingleChildScrollView 
