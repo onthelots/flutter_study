@@ -23,7 +23,6 @@
   - [2-8 Flash chat with firebase](#2-8-Flash-chat-with-firebase)
   - [2-9 Provider](#2-9-Provider)
 
-
 <br>
 
 ## 1-Dart beginning
