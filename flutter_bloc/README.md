@@ -6,29 +6,29 @@
 
 # contents
 
-[1-Introduce](#1-Introduce)
+### [1-Introduce](#1-Introduce)
   - [1-1 Bloc을 사용하는 이유](#1-1-Bloc을-사용하는-이유)
 
-[2-Stream](#2-Stream)
+### [2-Stream](#2-Stream)
   - [2-1 Future](#2-1-Future)
   - [2-2 Stream 이해하기](#2-2-Stream-이해하기)
 
-[3-Bloc Wideget](#3-Bloc-Wideget)
+### [3-Bloc Wideget](#3-Bloc-Wideget)
   - [3-1 Bloc Wideget](#3-1-Bloc-Wideget)
 
-[4-Bloc Core and Cubit](#4-Bloc-Core-and-Cubit)
+### [4-Bloc Core and Cubit](#4-Bloc-Core-and-Cubit)
   - [4-1 Bloc Core and Cubit](#4-1-Bloc-Core-and-Cubit)
 
-[5-Bloc vs Cubit](#5-Bloc-vs-Cubit)
+### [5-Bloc vs Cubit](#5-Bloc-vs-Cubit)
   - [5-1 Bloc vs Cubit](#5-1-Bloc-vs-Cubit)
 
-[6-Bloc concurrency](#6-Bloc-concurrency)
+### [6-Bloc concurrency](#6-Bloc-concurrency)
   - [6-1 Bloc concurrency](#6-1-Bloc-concurrency)
 
-[7-bloc 상태관리](#7-bloc-상태관리)
+### [7-bloc 상태관리](#7-bloc-상태관리)
   - [7-1 bloc 상태관리](#7-1-bloc-상태관리)
 
-[8-bloc간 통신방법](#8-bloc간-통신방법)
+### [8-bloc간 통신방법](#8-bloc간-통신방법)
   - [8-1 bloc간 통신방법](#8-1-bloc간-통신방법)
 
 <br>
@@ -141,13 +141,13 @@ MultiRepositoryProvider | RepositoryProvider를 여러개 등록하는 방식. M
 
 Widget | content | note
 ----| ----- | -----
-Bloc Selector | - | -
-Bloc Listener | - | -
-MultiBlocListener | - | -
-BlocConsumer | - | -
+Bloc Selector | 다른 위젯에서 다루는 State의 상태가 변경되었어도, 이에 영향을 받지 않고 리빌드되지 않는 속성. 다만 해당 Selector의 속성이 변경되었을 땐 다른 State 빌더는 영향을 받음 | 예시) '좋아요' 버튼을 selector로 설정하게 될 경우, 다른 유저 인터렉션에 의해 Bloc State를 변경한다고 해도, re-build되지 않음. 오로지 자신만의 state값이 변경되었을 경우에만 re-build를 실시하게 됨
+Bloc Listener | 상태변화에 따라, '이벤트 처리' 만 필요 할 경우 활용. child Widget의 경우 re-build되지 않음 | 예시) showAlertDialog, Bloc 간 통신
+BlocConsumer | BlocBuilder + BlocListener. 이벤트 처리와 UI를 모두 진행할 수 있음. Provider의 Consumer와 동일 | buildWhen(화면), listenWhen(이벤트 처리) 2가지 모두 옵션으로 제공
 
+<br>
 
-### 4-Bloc Core and Cubit
+## 4-Bloc Core and Cubit
 
 ### 4-1 Bloc Core and Cubit
     1) bloc의 작동방식
@@ -158,7 +158,7 @@ abc | abc  | abc
 
 <br>
 
-### 5-Bloc vs Cubit
+## 5-Bloc vs Cubit
 
 ### 5-1 Bloc vs Cubit
     1) bloc의 작동방식
@@ -169,7 +169,7 @@ abc | abc  | abc
 
 <br>
 
-### 6-Bloc concurrency
+## 6-Bloc concurrency
 
 ### 6-1 Bloc concurrency
     1) bloc의 작동방식
@@ -181,7 +181,7 @@ abc | abc  | abc
 
 <br>
 
-### 7-bloc 상태관리
+## 7-bloc 상태관리
 
 ### 7-1 bloc 상태관리
     1) bloc의 작동방식
@@ -193,7 +193,7 @@ abc | abc  | abc
 
 <br>
 
-### 8-bloc간 통신방법
+## 8-bloc간 통신방법
 
 ### 8-1 bloc간 통신방법
     1) bloc의 작동방식
