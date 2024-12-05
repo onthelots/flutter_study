@@ -99,6 +99,9 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentRouterfullPath = GoRouter.of(context).state?.fullPath;
+    final isRootScreen = currentRouterfullPath == '/a' || currentRouterfullPath == '/b';
+
     return LayoutBuilder(builder: (context, constraints) {
       if (constraints.maxWidth < 450) {
         print('Common Nav');
@@ -106,6 +109,7 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
           body: navigationShell,
           selectedIndex: navigationShell.currentIndex,
           onDestinationSelected: _goBranch,
+          showNavBar: isRootScreen,
         );
       } else {
         print('Rail Nav');
@@ -113,6 +117,7 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
           body: navigationShell,
           selectedIndex: navigationShell.currentIndex,
           onDestinationSelected: _goBranch,
+          showNavBar: isRootScreen,
         );
       }
     });
@@ -126,23 +131,25 @@ class ScaffoldWithNavigationBar extends StatelessWidget {
     required this.body,
     required this.selectedIndex,
     required this.onDestinationSelected,
+    required this.showNavBar,
   });
   final Widget body;
   final int selectedIndex;
   final ValueChanged<int> onDestinationSelected;
+  final bool showNavBar;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: body,
-      bottomNavigationBar: NavigationBar(
+      bottomNavigationBar: showNavBar ? NavigationBar(
         selectedIndex: selectedIndex,
         destinations: const [
           NavigationDestination(label: 'Section A', icon: Icon(Icons.home)),
           NavigationDestination(label: 'Section B', icon: Icon(Icons.settings)),
         ],
         onDestinationSelected: onDestinationSelected,
-      ),
+      ) : null,  // 조건에 따라 네비게이션 바 숨기기
     );
   }
 }
@@ -154,31 +161,34 @@ class ScaffoldWithNavigationRail extends StatelessWidget {
     required this.body,
     required this.selectedIndex,
     required this.onDestinationSelected,
+    required this.showNavBar,
   });
   final Widget body;
   final int selectedIndex;
   final ValueChanged<int> onDestinationSelected;
+  final bool showNavBar;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
         children: [
-          NavigationRail(
-            selectedIndex: selectedIndex,
-            onDestinationSelected: onDestinationSelected,
-            labelType: NavigationRailLabelType.all,
-            destinations: const <NavigationRailDestination>[
-              NavigationRailDestination(
-                label: Text('Section A'),
-                icon: Icon(Icons.home),
-              ),
-              NavigationRailDestination(
-                label: Text('Section B'),
-                icon: Icon(Icons.settings),
-              ),
-            ],
-          ),
+          if (showNavBar)
+            NavigationRail(
+              selectedIndex: selectedIndex,
+              onDestinationSelected: onDestinationSelected,
+              labelType: NavigationRailLabelType.all,
+              destinations: const <NavigationRailDestination>[
+                NavigationRailDestination(
+                  label: Text('Section A'),
+                  icon: Icon(Icons.home),
+                ),
+                NavigationRailDestination(
+                  label: Text('Section B'),
+                  icon: Icon(Icons.settings),
+                ),
+              ],
+            ),
           const VerticalDivider(thickness: 1, width: 1),
           // This is the main content.
           Expanded(
